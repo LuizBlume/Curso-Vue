@@ -6,18 +6,18 @@
   </div>
 </template>
 <script>
-import Form from './form.vue';
-import Info from './info.vue'
+import Form from "./form.vue";
+import Info from "./info.vue";
 export default {
   name: "Pessoa",
   components: {
     Info,
-    Form
+    Form,
   },
   data() {
     return {
       nome: "Luiz",
     };
-  }
+  },
 };
 </script>

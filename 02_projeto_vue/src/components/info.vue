@@ -11,18 +11,49 @@
       <li>Vue</li>
       <li>Typescript</li>
     </ul>
+    <div>
+      <button @click="showEmail">{{textoBotao}}</button>
+    </div>
     <p v-show="mostrar_email">Mande uma mensagem para {{ email }}</p>
+    <p class="teste">
+      Para acessar meu portifólio
+      <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a>
+    </p>
+    <Picture />
   </div>
 </template>
 <script>
+import Picture from "./picture.vue";
 export default {
-    name: 'Info',
-    data() {
-        return {
-            esta_trabalhando: true,
-            mostrar_email: false,
-            email: 'luiz.fernando.251107@gmail.com'
-        }
+  components: {
+    Picture,
+  },
+  name: "Info",
+  data() {
+    return {
+      esta_trabalhando: false,
+      mostrar_email: false,
+      email: "luiz.fernando.251107@gmail.com",
+      meu_link: "https://github.com/LuizBlume",
+      textoBotao: "Mostrar email"
+    };
+  },
+  methods: {
+    showEmail() {
+      this.mostrar_email = !this.mostrar_email
+      if (!this.mostrar_email) {
+        this.textoBotao = "Mostrar email"
+      }
+      else {
+        this.textoBotao = "Esconder email"
+      }
     }
-}
+  }
+};
 </script>
+
+<style>
+  .paragrafo-pai {
+    color: rgb(128, 195, 255);
+  }
+</style>
