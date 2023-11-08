@@ -1,7 +1,7 @@
 <template>
 <div>
     <h2>Meu formulário:</h2>
-  <form action="">
+  <form action="" @submit="enviarFormulario">
     <div>
       <inputText />
     </div>
@@ -12,6 +12,9 @@
       <submit />
     </div>
   </form>
+  <p>conteúdo</p>
+  <p>conteúdo</p>
+  <p>conteúdo</p>
   </div>
 </template>
 <script>
@@ -24,5 +27,15 @@ export default {
     inputText,
     submit
   },
+  methods: {
+    enviarFormulario() {
+      console.log("Formulário enviado")
+    }
+  }
 };
 </script>
+<style scoped>
+  p {
+    margin: 50px;
+  }
+</style>
