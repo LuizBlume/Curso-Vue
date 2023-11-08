@@ -2,17 +2,23 @@
   <div>
     <p v-if="esta_trabalhando">Estou trabalhando no momento</p>
     <p v-else>Estou buscando novas oportunidades</p>
-    <p>Utilzo as seguintes linguagens:</p>
+    <p>Utilzo as seguintes linguagens para back-end:</p>
     <ul>
-      <li>Javascript</li>
-      <li>PHP</li>
-      <li>Python</li>
-      <li>MySQL</li>
-      <li>Vue</li>
-      <li>Typescript</li>
+      <li
+        v-for="(technology, index) in backend_technologies"
+        v-bind:key="index"
+      >
+        {{ technology }}
+      </li>
+    </ul>
+    <p>Utilizo as seguintes tecnologias para front-end:</p>
+    <ul>
+      <li v-for="technology in frontend_technologies" :key="technology.id">
+        {{ technology.language }}
+      </li>
     </ul>
     <div>
-      <button @click="showEmail">{{textoBotao}}</button>
+      <button @click="showEmail">{{ textoBotao }}</button>
     </div>
     <p v-show="mostrar_email">Mande uma mensagem para {{ email }}</p>
     <p class="teste">
@@ -35,7 +41,15 @@ export default {
       mostrar_email: false,
       email: "luiz.fernando.251107@gmail.com",
       meu_link: "https://github.com/LuizBlume",
-      textoBotao: "Mostrar email"
+      textoBotao: "Mostrar email",
+      backend_technologies: ['Javascript', 'PHP', 'Python', 'MySQL', 'Typescript'],
+      frontend_technologies: [
+        {id: 1, language: 'HTML'},
+        {id: 2, language: 'CSS'},
+        {id: 3, language: 'Bootstrap'},
+        {id: 4, language: 'Vue'},
+        {id: 5, language: 'Javascript'}
+      ]
     };
   },
   methods: {
@@ -53,7 +67,7 @@ export default {
 </script>
 
 <style>
-  .paragrafo-pai {
-    color: rgb(128, 195, 255);
-  }
+.paragrafo-pai {
+  color: rgb(128, 195, 255);
+}
 </style>
