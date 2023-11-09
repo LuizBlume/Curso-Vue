@@ -1,17 +1,22 @@
 <template>
-    <div>
-        <h1>Olá Vue!</h1>
-        <p>Meu nome é {{ nome }} e trabalho como {{ profissao }}</p>
-    </div>
+  <div>
+    <h1>Olá Vue!</h1>
+    <p>Meu nome é {{ nome }} e trabalho como {{ profissao }}</p>
+    <MultiplosEventos />
+  </div>
 </template>
 <script>
-    export default {
-        name: 'PrimeiroComponente',
-        data() {
-            return {
-                nome: "Ganso",
-                profissao: "Programador"
-            }
-        }
-    }
+import MultiplosEventos from './MultiplosEventos.vue'
+export default {
+  name: "PrimeiroComponente",
+  components: {
+    MultiplosEventos
+  },
+  data() {
+    return {
+      nome: "Ganso",
+      profissao: "Programador",
+    };
+  },
+};
 </script>
