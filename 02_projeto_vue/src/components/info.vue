@@ -34,12 +34,14 @@ export default {
   components: {
     Picture,
   },
+  props: {
+    email: String,
+    esta_trabalhando: Boolean
+  },
   name: "Info",
   data() {
     return {
-      esta_trabalhando: false,
       mostrar_email: false,
-      email: "luiz.fernando.251107@gmail.com",
       meu_link: "https://github.com/LuizBlume",
       textoBotao: "Mostrar email",
       backend_technologies: ['Javascript', 'PHP', 'Python', 'MySQL', 'Typescript'],
